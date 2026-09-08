@@ -51,6 +51,11 @@
             font-size: 20px;
             font-weight: bold;
         }
+        .borde-verde {
+            border-color: green;
+        }
+        .borde-gris {
+            border-color: #cccccc;
     </style>
 </head>
 
@@ -105,15 +110,21 @@
             if (resultadoLocal > resultadoVisitante) {
 
                 mensaje.textContent = "Gana el equipo local";
+                cajaLocal.className = "equipo borde-verde";
+                cajaVisitante.className = "equipo borde-gris";
 
 
             } else if (resultadoLocal < resultadoVisitante) {
 
                 mensaje.textContent = "Gana el equipo visitante";
+                cajaLocal.className = "equipo borde-gris";
+                cajaVisitante.className = "equipo borde-verde";
 
             } else {
 
                 mensaje.textContent = "Los equipos van empate";
+                cajaLocal.className = "equipo borde-gris";
+                cajaVisitante.className = "equipo borde-gris";
 
             }
 
@@ -129,15 +140,22 @@
             if (resultadoLocal > resultadoVisitante) {
 
                 mensaje.textContent = "Gana el equipo local";
+                //Ponemos colores de los bordes de las cajas para indicar quien va ganando
+                cajaLocal.className = "equipo borde-verde";
+                cajaVisitante.className = "equipo borde-gris";
 
             } else if (resultadoLocal < resultadoVisitante) {
 
                 mensaje.textContent = "Gana el equipo visitante";
+                cajaLocal.className = "equipo borde-gris";
+                cajaVisitante.className = "equipo borde-verde";
 
 
             } else {
 
-                mensaje.textContent = "Los equipos van empate";
+                mensaje.textContent = "Los equipos van empate"; 
+                cajaLocal.className = "equipo borde-gris";
+                cajaVisitante.className = "equipo borde-gris";
 
             }
 

@@ -84,9 +84,30 @@
             likes: 15 // puedes usar esta variable como variable de estado
         };
 
-        // Obtenemos el nombre del objeto profile.
+        // Obtenemos el nombre del objeto profile. Seleccionamos los elementos del DOM y los actualizamos con la información del objeto profile.
         const nombre = document.querySelector("#nombre");
+        //Nombre en pantalla
         nombre.textContent = profile.nombre;
+        const foto = document.querySelector("#foto");
+        //Foto en pantalla
+        foto.src = profile.foto;
+        const edad = document.querySelector("#edad");
+        //Edad en pantalla
+        edad.textContent = profile.edad;
+        const lugarNacimiento = document.querySelector("#lugar-nacimiento");
+        //Lugar de nacimiento en pantalla
+        lugarNacimiento.textContent = profile.lugarNacimiento;
+        const numeroLikes = document.querySelector("#numero-likes");
+        //Número de likes en pantalla
+        numeroLikes.textContent = profile.likes;        
+        const botonLikes = document.querySelector("#boton-likes");
+        //Vemos cuando se hace click en el boton de likes y aumentamos el número de likes en 1
+        botonLikes.addEventListener("click", function () {
+            profile.likes++;
+            numeroLikes.textContent = profile.likes;
+        });
+
+
 
     </script>
 

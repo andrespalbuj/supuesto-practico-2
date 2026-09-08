@@ -79,10 +79,27 @@
 
 
     <script>
-
+    // Precio de la entrada
         const precioEntrada = 25;
 
-        // Tu código aquí
+        // Conectar elementos del DOM
+        const cajaEntradas = document.getElementById("numero-entradas");
+        const botonCalcular = document.getElementById("calcular");
+        const precioTotal = document.getElementById("precio-total");
+
+        //Le decimos al boton que cuando se haga click ejecute la funcion
+        botonCalcular.addEventListener("click", function () {
+            //Leemos cuantas entradas ha introducido el usuario y lo convertimos a numero entero
+            const numeroEntradas = parseInt(cajaEntradas.value);
+            if (isNaN(numeroEntradas) || numeroEntradas < 1) {
+                alert("Por favor, introduce un número válido de entradas.");
+                return;
+            }
+            //Hacemos la multiplicacion del numero de entradas por el precio de la entrada y lo mostramos en el span correspondiente
+            const total = numeroEntradas * precioEntrada;
+            //Mostramos el total en el span correspondiente
+            precioTotal.textContent = total;
+        });
 
     </script>
 
